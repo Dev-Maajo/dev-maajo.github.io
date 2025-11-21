@@ -7,203 +7,417 @@
     <title>404 — Page not found · HayaTech</title>
     <meta name="description"
         content="Page not found — HayaTech. The page you're looking for doesn't exist or has been moved." />
-    <!-- If your main css is in repo root -->
+
+    <!-- Optional: keep linking your main stylesheet if you want -->
     <link rel="stylesheet" href="style.css" />
+
     <style>
-        /* Minimal 404-specific styles to ensure it looks good even if main CSS missing */
+        /* 404 page scoped styles (self-contained if style.css missing) */
         :root {
-            --bg: #ffffff;
+            --bg: linear-gradient(180deg, #fbfdff, #ffffff);
+            --card: #ffffff;
             --muted: #6b7280;
             --accent: #2563eb;
-            --card: #f8fafc;
+            --accent-2: #7c3aed;
+            --shadow: 0 18px 40px rgba(15, 23, 42, 0.07);
+            --radius: 18px;
+            --glow: 0 10px 40px rgba(37, 99, 235, 0.08);
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color: #0b1220;
+        }
+
+        html,
+        body {
+            height: 100%;
         }
 
         body {
             margin: 0;
-            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+            min-height: 100%;
             background: var(--bg);
-            color: #0f172a;
             -webkit-font-smoothing: antialiased;
-        }
-
-        .wrap {
-            min-height: 100vh;
+            -moz-osx-font-smoothing: grayscale;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 48px;
+            padding: 32px;
         }
 
-        .card-404 {
-            max-width: 920px;
+        .wrap {
             width: 100%;
-            background: #fff;
-            border-radius: 14px;
-            box-shadow: 0 20px 60px rgba(2, 6, 23, 0.06);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 520px;
+            gap: 0;
+            align-items: stretch;
+            min-height: 420px;
+        }
+
+        /* Left column: message + actions */
+        .left {
             padding: 48px;
             display: flex;
-            gap: 28px;
+            flex-direction: column;
+            gap: 18px;
+            justify-content: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+        }
+
+        .title {
+            font-size: 44px;
+            line-height: 1;
+            margin: 6px 0 6px;
+            font-weight: 800;
+            color: #071029;
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 16px;
+            margin: 0;
+            max-width: 54ch;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+            flex-wrap: wrap;
             align-items: center;
         }
 
-        .left {
-            flex: 1;
-            min-width: 260px
-        }
-
-        .right {
-            flex: 1;
-            min-width: 260px
-        }
-
-        h1 {
-            font-size: 56px;
-            margin: 0 0 6px;
-            line-height: 1;
-            color: #0b1220
-        }
-
-        p.lead {
-            color: var(--muted);
-            margin: 0 0 18px;
-            font-size: 16px
-        }
-
-        .buttons {
-            display: flex;
-            gap: 12px;
-            margin-top: 18px;
-            flex-wrap: wrap
-        }
-
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             padding: 10px 16px;
             border-radius: 10px;
+            font-weight: 700;
             text-decoration: none;
-            font-weight: 600;
-            border: 1px solid transparent
+            border: 1px solid transparent;
+            cursor: pointer;
         }
 
         .btn-primary {
-            background: var(--accent);
-            color: #fff
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            color: #fff;
+            box-shadow: var(--glow);
         }
 
-        .btn-ghost {
+        .btn-outline {
             background: transparent;
+            border: 1px solid rgba(10, 11, 12, 0.06);
             color: var(--muted);
-            border: 1px solid rgba(15, 23, 42, 0.06)
         }
 
         .meta {
-            margin-top: 14px;
             color: var(--muted);
-            font-size: 14px
+            font-size: 14px;
+            margin-top: 8px;
         }
 
         .search-row {
             display: flex;
-            gap: 8px;
-            margin-top: 18px
+            gap: 10px;
+            margin-top: 18px;
+            align-items: center;
         }
 
-        .search-row input {
+        .search-input {
             flex: 1;
-            padding: 10px;
+            padding: 12px 14px;
             border-radius: 10px;
-            border: 1px solid rgba(15, 23, 42, 0.06)
+            border: 1px solid rgba(10, 11, 12, 0.06);
+            font-size: 15px;
         }
 
-        .clock {
-            font-weight: 600;
+        .small {
+            font-size: 13px;
             color: var(--muted);
         }
 
-        @media(max-width:900px) {
-            .card-404 {
-                flex-direction: column;
-                padding: 28px
+        /* Right column: animated illustration */
+        .right {
+            background: linear-gradient(180deg, rgba(124, 58, 237, 0.03), rgba(37, 99, 235, 0.02));
+            padding: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .illustration {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(2, 6, 23, 0.06);
+            background: linear-gradient(180deg, #fff, #fbfdff);
+            padding: 18px;
+            transform-origin: center;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px)
             }
 
-            h1 {
-                font-size: 34px
+            50% {
+                transform: translateY(-10px)
+            }
+
+            100% {
+                transform: translateY(0px)
+            }
+        }
+
+        /* decorative blobs */
+        .blob {
+            position: absolute;
+            filter: blur(36px);
+            opacity: 0.25;
+            will-change: transform;
+            animation: blobMove 10s ease-in-out infinite;
+        }
+
+        .blob.a {
+            width: 260px;
+            height: 260px;
+            background: linear-gradient(135deg, #7c3aed, #2563eb);
+            top: -70px;
+            right: -60px;
+            border-radius: 50%;
+        }
+
+        .blob.b {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #1dd3b0, #7c3aed);
+            bottom: -40px;
+            left: -40px;
+            border-radius: 50%;
+            animation-duration: 14s;
+            opacity: 0.18;
+        }
+
+        @keyframes blobMove {
+            0% {
+                transform: translate(0, 0) scale(1)
+            }
+
+            50% {
+                transform: translate(12px, -18px) scale(1.05)
+            }
+
+            100% {
+                transform: translate(0, 0) scale(1)
+            }
+        }
+
+        /* footer small text */
+        .foot {
+            margin-top: 12px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* responsive */
+        @media(max-width:980px) {
+            .card {
+                grid-template-columns: 1fr;
+            }
+
+            .right {
+                order: -1;
+                padding: 18px;
+            }
+
+            .left {
+                padding: 24px;
+            }
+
+            .title {
+                font-size: 32px;
             }
         }
     </style>
 </head>
 
 <body>
-    <main class="wrap">
-        <section class="card-404">
+    <div class="wrap" role="main">
+        <div class="card" aria-labelledby="pageTitle">
             <div class="left">
-                <h1>404 — Page not found</h1>
-                <p class="lead">Oops — the page you're looking for doesn't exist or has been moved. Let's get you back
-                    on track.</p>
+                <div class="eyebrow" aria-hidden="true">HayaTech · Error</div>
+                <h1 id="pageTitle" class="title">404 — Page not found</h1>
+                <p class="lead">Looks like the page you were trying to reach doesn't exist anymore — or moved. Let's get
+                    you back on track.</p>
 
-                <div class="buttons">
-                    <!-- Use relative root path to index.html on your site -->
-                    <a class="btn btn-primary" id="homeBtn" href="/mnt/data/index.html">Back to home</a>
-                    <a class="btn btn-ghost" href="https://hayatech.dev/">Visit HayaTech</a>
+                <div class="actions" role="region" aria-label="Quick actions">
+                    <a class="btn btn-primary" href="/" id="homeLink" title="Return to homepage">Back to Home</a>
+                    <a class="btn btn-outline" href="https://hayatech.dev/" target="_blank" rel="noopener">Visit live
+                        site</a>
+                    <a class="btn btn-outline" id="reportBtn"
+                        href="mailto:skmaaz8828@gmail.com?subject=Broken%20link%20at%20hayatech.dev">Report this</a>
+                </div>
+
+                <div class="search-row" aria-label="Search">
+                    <input type="search" id="siteSearch" class="search-input" placeholder="Search the site (use Google)"
+                        aria-label="Search the site" />
+                    <button id="searchBtn" class="btn btn-outline" aria-label="Search">Search</button>
                 </div>
 
                 <div class="meta">
-                    <div>Auto-redirecting to home in <span id="countdown">8</span> seconds — <a href="#"
-                            id="cancelRedirect">Cancel</a></div>
-                </div>
-
-                <div class="search-row" aria-hidden="false">
-                    <input type="search" id="siteSearch" placeholder="Search the site (search uses Google)" />
-                    <a class="btn btn-ghost" id="searchBtn" href="#" style="align-self:center;">Search</a>
+                    <div class="small">Auto-redirecting to homepage in <strong id="countdown">8</strong>s — <a href="#"
+                            id="cancel">cancel</a></div>
+                    <div class="foot">Or check our <a href="/#products">Products</a> or <a href="/#contact">Contact</a>
+                        page.</div>
                 </div>
             </div>
 
-            <div class="right" aria-hidden="true">
-                <!-- Large decorative image — keep this optional or point to assets/product1.png -->
-                <img src="assets/product1.png" alt="Gmail Automation preview"
-                    style="width:100%;border-radius:12px;object-fit:cover;box-shadow:0 8px 30px rgba(2,6,23,0.06)" />
+            <div class="right" aria-hidden="false">
+                <!-- decorative blobs -->
+                <div class="blob a" aria-hidden="true"></div>
+                <div class="blob b" aria-hidden="true"></div>
+
+                <!-- animated SVG illustration (self-contained, no external load) -->
+                <div class="illustration" role="img" aria-label="Illustration — lost page">
+                    <svg viewBox="0 0 800 420" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#2563eb" />
+                                <stop offset="1" stop-color="#7c3aed" />
+                            </linearGradient>
+                            <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#0b1220"
+                                    flood-opacity="0.08" />
+                            </filter>
+                        </defs>
+
+                        <!-- Background card -->
+                        <rect x="20" y="20" rx="18" ry="18" width="760" height="380" fill="#ffffff" stroke="#f1f5f9"
+                            stroke-width="1" />
+                        <!-- envelope icon (left) -->
+                        <g transform="translate(80,120)">
+                            <rect x="0" y="0" width="160" height="100" rx="12" fill="#fff" stroke="#f3f4f6" />
+                            <path d="M0 0 L80 60 L160 0" fill="none" stroke="#ef4444" stroke-width="8"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="140" cy="-30" r="12" fill="#ef4444" opacity="0.12">
+                                <animate attributeName="cy" values="-30;-40;-30" dur="4s" repeatCount="indefinite" />
+                            </circle>
+                        </g>
+
+                        <!-- gear (center) animated -->
+                        <g transform="translate(320,120)" filter="url(#shadow)">
+                            <g id="gear" transform="scale(1)">
+                                <path
+                                    d="M0 -36 L8 -36 L12 -28 L20 -24 L20 -12 L28 -8 L32 0 L28 8 L20 12 L20 24 L12 28 L8 36 L-8 36 L-12 28 L-20 24 L-20 12 L-28 8 L-32 0 L-28 -8 L-20 -12 L-20 -24 L-12 -28 L-8 -36 z"
+                                    fill="url(#g1)" transform="scale(1.2)" />
+                                <circle cx="0" cy="0" r="22" fill="#fff" />
+                                <circle cx="0" cy="0" r="12" fill="url(#g1)" />
+                            </g>
+                            <animateTransform xlink:href="#gear" attributeName="transform" attributeType="XML"
+                                type="rotate" from="0 0 0" to="360 0 0" dur="12s" repeatCount="indefinite" />
+                        </g>
+
+                        <!-- spreadsheet icon (right) -->
+                        <g transform="translate(560,120)">
+                            <rect width="140" height="110" rx="10" fill="#ecfccb" stroke="#d1fae5" />
+                            <rect x="10" y="10" width="120" height="20" rx="6" fill="#fff" />
+                            <g transform="translate(12,42)" fill="#10b981" opacity="0.95">
+                                <rect width="20" height="16" rx="3" />
+                                <rect x="28" width="20" height="16" rx="3" />
+                                <rect x="56" width="20" height="16" rx="3" />
+                                <rect x="0" y="22" width="20" height="16" rx="3" />
+                                <rect x="28" y="22" width="20" height="16" rx="3" />
+                                <rect x="56" y="22" width="20" height="16" rx="3" />
+                            </g>
+                        </g>
+
+                        <!-- small animated dots to show motion -->
+                        <g transform="translate(240,320)">
+                            <circle cx="0" cy="0" r="6" fill="#2563eb">
+                                <animate attributeName="cx" values="0;20;0" dur="3s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="1;0.2;1" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="60" cy="0" r="6" fill="#7c3aed" opacity="0.9">
+                                <animate attributeName="cx" values="60;80;60" dur="4s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="1;0.2;1" dur="4s" repeatCount="indefinite" />
+                            </circle>
+                        </g>
+
+                        <!-- optional product preview on bottom right -->
+                        <g transform="translate(420,260)">
+                            <rect x="0" y="-2" rx="12" width="260" height="110" fill="#fff" stroke="#f3f4f6" />
+                            <image x="10" y="6" width="240" height="96" xlink:href="assets/product1.png"
+                                preserveAspectRatio="xMidYMid slice" />
+                        </g>
+
+                    </svg>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <script>
-        // Auto redirect with simple countdown (can be cancelled)
+        // Auto-redirect countdown (can be cancelled)
         (function () {
             var seconds = 8;
-            var countdownEl = document.getElementById('countdown');
+            var countdown = document.getElementById('countdown');
+            var cancel = document.getElementById('cancel');
             var timer = setInterval(function () {
                 seconds--;
-                if (countdownEl) countdownEl.innerText = Math.max(seconds, 0);
+                if (countdown) countdown.textContent = Math.max(0, seconds);
                 if (seconds <= 0) {
                     clearInterval(timer);
-                    // go home — use site root or index path
                     window.location.href = '/';
                 }
             }, 1000);
 
-            var cancel = document.getElementById('cancelRedirect');
-            if (cancel) {
-                cancel.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    clearInterval(timer);
-                    countdownEl.innerText = 'stopped';
-                    cancel.style.display = 'none';
-                });
-            }
+            cancel && cancel.addEventListener('click', function (e) {
+                e.preventDefault();
+                clearInterval(timer);
+                countdown.textContent = 'stopped';
+                cancel.style.display = 'none';
+            });
 
-            // Search button: opens google site: search
+            // Google site search helper
             var searchBtn = document.getElementById('searchBtn');
             var searchInput = document.getElementById('siteSearch');
-            if (searchBtn && searchInput) {
-                searchBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    var q = encodeURIComponent(searchInput.value.trim());
-                    if (!q) return;
-                    // use Google site search
-                    var url = 'https://www.google.com/search?q=site:hayatech.dev+' + q;
-                    window.open(url, '_blank');
-                });
-            }
+            searchBtn && searchBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                var q = (searchInput && searchInput.value.trim());
+                if (!q) {
+                    searchInput && searchInput.focus();
+                    return;
+                }
+                var url = 'https://www.google.com/search?q=site:hayatech.dev+' + encodeURIComponent(q);
+                window.open(url, '_blank');
+            });
+
+            // Report button fallback open mailto in new tab (already href set)
+            var reportBtn = document.getElementById('reportBtn');
+            reportBtn && reportBtn.addEventListener('click', function () {
+                // analytics or UX hook could go here
+            });
         })();
     </script>
 </body>
