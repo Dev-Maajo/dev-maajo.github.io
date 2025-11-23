@@ -8,13 +8,12 @@
 
     <meta name="description"
         content="HayaTech — Modern automation systems, n8n workflows, Gmail automation, AI assistants and business process automation." />
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J9W57J66KX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-J9W57J66KX');
     </script>
 
@@ -24,7 +23,6 @@
 
 <body>
 
-    <!-- NAV -->
     <header class="nav glass-nav">
         <div class="container nav-inner">
             <a class="brand" href="#">
@@ -46,8 +44,6 @@
         </div>
     </header>
 
-
-    <!-- HERO -->
     <section class="hero">
         <div class="container hero-inner">
 
@@ -65,7 +61,7 @@
 
                 <div class="hero-cta">
                     <a href="#products" class="btn btn-primary big-btn">Explore Products</a>
-                    <a href="#contact" class="btn btn-outline big-btn">Hire Me</a>
+                    <a href="hire-me.html" class="btn btn-outline big-btn">Hire Me</a>
                 </div>
             </div>
 
@@ -77,8 +73,6 @@
 
         </div>
     </section>
-
-
 
     <!-- PRODUCTS -->
     <section id="products" class="section">
@@ -119,8 +113,6 @@
         </div>
     </section>
 
-
-
     <!-- SERVICES -->
     <section id="services" class="section alt">
         <div class="container">
@@ -157,8 +149,6 @@
         </div>
     </section>
 
-
-
     <!-- PORTFOLIO -->
     <section id="portfolio" class="section">
         <div class="container">
@@ -188,12 +178,9 @@
                     </div>
                 </div>
 
-
             </div>
         </div>
     </section>
-
-
 
     <!-- ABOUT -->
     <section id="about" class="section alt">
@@ -231,8 +218,6 @@
         </div>
     </section>
 
-
-
     <!-- CONTACT -->
     <section id="contact" class="section">
         <div class="container">
@@ -249,9 +234,6 @@
                 <button type="submit" class="btn btn-primary full-btn">Send Message</button>
             </form>
 
-
-
-
             <p class="muted center">
                 Or email at:
                 <a href="mailto:skmaaz8828@gmail.com">skmaaz8828@gmail.com</a>
@@ -260,18 +242,21 @@
         </div>
     </section>
 
-
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-inner">
-            <div>© <span id="year"></span> HayaTech — Built with purpose.</div>
+            <div>© <span id="year"></span> HayaTech — Built with purpose and a quiet hope for what’s ahead ❤️</div>
 
             <div class="footer-links">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
     <script src="script.js"></script>
 </body>

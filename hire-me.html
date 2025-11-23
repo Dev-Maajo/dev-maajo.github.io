@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hire Me — HayaTech | Packages & Pricing</title>
+    <meta name="description"
+        content="HayaTech — Hire Maaz Shaikh for n8n automations, email pipelines, bots & maintenance. Clear packages and fast onboarding." />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/logo.png" />
+
+    <style>
+        :root {
+            --accent: #6b46c1;
+            /* primary accent */
+            --muted: #55637a;
+            /* softer muted for light bg */
+            --card-bg: #ffffff;
+            /* card backgrounds */
+            --glass: rgba(11, 23, 36, 0.04);
+            --page-bg-1: #f6f7fb;
+            --page-bg-2: #eef2f8;
+            color-scheme: light;
+        }
+
+        /* Base */
+        body {
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            margin: 0;
+            background: linear-gradient(180deg, var(--page-bg-1) 0%, var(--page-bg-2) 100%);
+            color: #0b1724;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 28px;
+        }
+
+        .nav {
+            padding: 18px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit
+        }
+
+        .brand .logo {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 1px solid rgba(11, 23, 36, 0.04);
+            background: white
+        }
+
+        .nav nav {
+            margin-left: auto;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 36px 0;
+            display: flex;
+            gap: 36px;
+            align-items: center;
+        }
+
+        .hero-left {
+            flex: 1;
+        }
+
+        .hero-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+            line-height: 1.05;
+            margin: 0 0 12px;
+            color: #081428;
+        }
+
+        .lead {
+            color: var(--muted);
+            margin: 0 0 20px;
+            font-size: 15px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 8px 24px rgba(107, 70, 193, 0.12);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(11, 23, 36, 0.06);
+            color: #0b1724;
+        }
+
+        .hero-card {
+            background: var(--card-bg);
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(15, 23, 36, 0.06);
+            border: 1px solid rgba(11, 23, 36, 0.04);
+        }
+
+        /* Pricing grid */
+        .pricing-grid {
+            display: grid;
+            gap: 18px;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 28px;
+        }
+
+        .price-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(11, 23, 36, 0.04);
+            box-shadow: 0 8px 24px rgba(15, 23, 36, 0.03);
+        }
+
+        .price-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .price-title {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .price-amount {
+            font-weight: 900;
+            font-size: 22px;
+            color: #0b1724;
+        }
+
+        .price-bullets {
+            color: var(--muted);
+            margin: 12px 0 18px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .price-bullets li {
+            margin: 8px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .price-bullets li:before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 12px;
+            top: 2px;
+        }
+
+        .popular {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 34px rgba(107, 70, 193, 0.06);
+            border: 1px solid rgba(107, 70, 193, 0.10);
+        }
+
+        /* portfolio */
+        .portfolio {
+            margin-top: 48px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .portfolio-left {
+            flex: 1;
+        }
+
+        .portfolio-right {
+            width: 320px;
+            background: linear-gradient(180deg, #ffffff, #fbfdff);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(11, 23, 36, 0.04);
+            box-shadow: 0 8px 20px rgba(15, 23, 36, 0.03);
+        }
+
+        .demo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .demo-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(11, 23, 36, 0.04);
+            color: var(--muted);
+        }
+
+        /* FAQ & footer */
+        .muted {
+            color: var(--muted);
+        }
+
+        footer {
+            margin-top: 48px;
+            padding: 28px 0;
+            color: var(--muted);
+            border-top: 1px solid rgba(11, 23, 36, 0.04);
+            background: transparent;
+        }
+
+        @media (max-width:980px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio {
+                flex-direction: column;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+            }
+
+            .hero-right {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="container nav">
+        <a class="brand" href="index.html" style="text-decoration:none">
+            <img class="logo" src="assets/logo.png" alt="HayaTech logo" />
+            <div style="line-height:1">
+                <div style="font-weight:800; color:#081428">HayaTech</div>
+                <div style="font-size:12px; color:var(--muted); margin-top:2px">Automation • n8n • Bots</div>
+            </div>
+        </a>
+
+        <nav>
+            <a class="btn btn-outline" href="index.html">Back to Home</a>
+            <a class="btn btn-primary" href="https://wa.me/918828278210" target="_blank">Chat on WhatsApp</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-left">
+                <h1>Hire Maaz — Automation & Workflow Expert</h1>
+                <p class="lead">Fast delivery, clear scope and honest pricing. I build n8n workflows, email automations,
+                    onboarding flows, payment integrations and maintenance plans — all halal, reliable and
+                    production-ready.</p>
+
+                <div class="hero-ctas">
+                    <a class="btn btn-primary" href="#packages">See Packages</a>
+                    <a class="btn btn-outline" href="#portfolio">View Demos</a>
+                    <a class="btn btn-outline" href="mailto:skmaaz8828@gmail.com">Email a Brief</a>
+                </div>
+
+                <div style="margin-top:16px; color:var(--muted); font-size:14px;">
+                    <strong>Quick note:</strong> After purchase/booking I start with a 30-minute scoping call to lock
+                    deliverables, timelines and deliverable import files.
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-card" style="max-width:420px; text-align:center;">
+                    <!-- FIXED IMAGE: copy your hero into assets/hero.jpg -->
+                    <img src="assets/hero.png" alt="HayaTech preview"
+                        style="width:100%; border-radius:10px; display:block; margin-bottom:12px; object-fit:cover; max-height:260px;">
+                    <div style="font-size:13px; color:var(--muted);">Real demos: Lead automation, onboarding flows,
+                        payment integrations — import-ready workflows and guides.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PACKAGES -->
+        <section id="packages" style="margin-top:36px;">
+            <h2 style="margin:0 0 6px">Hire Me — Packages</h2>
+            <p class="muted" style="margin-top:0">Clear, structured packages encourage outreach. Pick a tier, message me
+                and we start with a scoping call.</p>
+
+            <div class="pricing-grid" aria-label="Pricing packages">
+                <!-- Starter -->
+                <div class="price-card">
+                    <div class="price-top">
+                        <div class="price-title">Starter</div>
+                        <div class="price-amount">₹19,999</div>
+                    </div>
+
+                    <ul class="price-bullets">
+                        <li>1 simple automation / workflow (up to 6 nodes)</li>
+                        <li>Setup guide & JSON export</li>
+                        <li>1 round of small revisions</li>
+                        <li>Email handover & 3 days support</li>
+                    </ul>
+
+                    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                        <a class="btn btn-outline"
+                            href="mailto:skmaaz8828@gmail.com?subject=Hire%20-%20Starter%20Package%20(₹19,999)">Email</a>
+                        <a class="btn btn-primary"
+                            href="https://wa.me/918828278210?text=Hi%20Maaz%2C%20I%27m%20interested%20in%20the%20Starter%20package%20(₹19%2C999)."
+                            target="_blank">Message on WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Standard (popular) -->
+                <div class="price-card popular">
+                    <div class="price-top">
+                        <div class="price-title">Standard</div>
+                        <div class="price-amount">₹39,999</div>
+                    </div>
+
+                    <ul class="price-bullets">
+                        <li>Complex workflows (up to 15 nodes)</li>
+                        <li>Data storage, Sheets integration & attachments</li>
+                        <li>2 rounds of revisions + 7 days support</li>
+                        <li>Quick 30-min onboarding call</li>
+                    </ul>
+
+                    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                        <a class="btn btn-outline"
+                            href="mailto:skmaaz8828@gmail.com?subject=Hire%20-%20Standard%20Package%20(₹39,999)">Email</a>
+                        <a class="btn btn-primary"
+                            href="https://wa.me/918828278210?text=Hi%20Maaz%2C%20I%27m%20interested%20in%20the%20Standard%20package%20(₹39%2C999)."
+                            target="_blank">Message on WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Premium -->
+                <div class="price-card">
+                    <div class="price-top">
+                        <div class="price-title">Premium</div>
+                        <div class="price-amount">₹79,999</div>
+                    </div>
+
+                    <ul class="price-bullets">
+                        <li>End-to-end solution + API / payment integration</li>
+                        <li>Detailed docs, demo video & import-ready JSON</li>
+                        <li>2 weeks priority support + maintenance option</li>
+                        <li>Includes 45-minute walkthrough call</li>
+                    </ul>
+
+                    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                        <a class="btn btn-outline"
+                            href="mailto:skmaaz8828@gmail.com?subject=Hire%20-%20Premium%20Package%20(₹79,999)">Email</a>
+                        <a class="btn btn-primary"
+                            href="https://wa.me/918828278210?text=Hi%20Maaz%2C%20I%27m%20interested%20in%20the%20Premium%20package%20(₹79%2C999)."
+                            target="_blank">Message on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top:12px; color:var(--muted); font-size:13px;">
+                <strong>Tip:</strong> Structured pricing helps streamline decisions and keeps your project scope crystal
+                clear.
+            </div>
+        </section>
+
+        <!-- Portfolio & Demos -->
+        <section id="portfolio" style="margin-top:36px;">
+            <h3 style="margin-bottom:8px">Showcase — Small demos</h3>
+            <div class="portfolio">
+                <div class="portfolio-left">
+                    <p class="muted">Live examples & templates I can deliver (import-ready where applicable):</p>
+                    <ul class="demo-list" aria-label="demo list">
+                        <li>Lead Automation System</li>
+                        <li>AI Legal Chatbot Prototype</li>
+                        <li>Profile Onboarding Flow</li>
+                        <li>E-commerce Checkout UX</li>
+                        <li>Payment Gateway Integration</li>
+                    </ul>
+
+                    <div style="margin-top:12px;">
+                        <a class="btn btn-outline" href="https://hayatechh.gumroad.com" target="_blank">View Products on
+                            Gumroad</a>
+                        <a class="btn btn-primary"
+                            href="https://wa.me/918828278210?text=Hi%20Maaz%2C%20please%20share%20your%20demo%20links."
+                            target="_blank">Share demo links</a>
+                    </div>
+                </div>
+
+                <aside class="portfolio-right">
+                    <div style="font-weight:700; margin-bottom:8px">Quick hire process</div>
+                    <ol style="margin:0; padding-left:18px; color:var(--muted);">
+                        <li>Pick a package or message to discuss custom scope.</li>
+                        <li>30–45 min scoping call — lock deliverables.</li>
+                        <li>Delivery (JSON + guide) → you import & test.</li>
+                        <li>Support window + optional maintenance.</li>
+                    </ol>
+
+                    <div style="margin-top:12px;">
+                        <a class="btn btn-primary"
+                            href="https://wa.me/918828278210?text=Hi%20Maaz%2C%20I%20want%20to%20book%20a%20scoping%20call."
+                            target="_blank">Book a Call</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section style="margin-top:36px;">
+            <h3>FAQ</h3>
+            <div style="color:var(--muted); margin-top:8px;">
+                <strong>Do you accept custom scopes?</strong> — Yes. Message first and we'll prepare a custom
+                quote.<br><br>
+                <strong>Payment methods?</strong> — Bank transfer / UPI / PayTm / Google Pay — details shared after
+                scoping call.<br><br>
+                <strong>Do you offer maintenance?</strong> — Yes, monthly maintenance plans available (ask for details).
+            </div>
+        </section>
+
+        <footer>
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+                <div>© <span id="year"></span> HayaTech — Made with intention and a small prayer for tomorrow ❤️.
+                </div>
+                <div style="color:var(--muted)">Email: <a href="mailto:skmaaz8828@gmail.com">skmaaz8828@gmail.com</a> ·
+                    WhatsApp: <a href="https://wa.me/918828278210">+91 88282 78210</a></div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
