@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -55,13 +56,25 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-gray-950 text-white min-h-screen flex flex-col`}
       >
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-EW2BT26CPP"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EW2BT26CPP');
+          `}
+        </Script>
+
         {/* Navbar */}
         <Navbar />
 
         {/* Page Content */}
-        <main className="pt-20 flex-grow">
-          {children}
-        </main>
+        <main className="pt-20 flex-grow">{children}</main>
 
         {/* Footer */}
         <Footer />
@@ -72,4 +85,3 @@ export default function RootLayout({
     </html>
   );
 }
-
