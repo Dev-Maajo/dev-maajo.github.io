@@ -1,65 +1,217 @@
+// src/app/page.tsx
+import { Bot, Workflow, Mic, Settings } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <main className="min-h-screen bg-gradient-to-b from-gray-950 to-gray-900 text-white">
+
+      {/* Hero Section */}
+      <section className="py-24 px-6 text-center">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+          <span className="text-emerald-500">Haya</span>
+          <span className="text-cyan-500">Tech</span>
+          <span className="text-white"> AI Automation Systems</span>
+        </h1>
+
+        <p className="text-xl md:text-3xl mb-8 max-w-4xl mx-auto">
+          AI automation systems that capture leads, respond to customers,
+          and run business workflows automatically.
+        </p>
+
+        <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+          Ethical and reliable automation systems designed for modern businesses.
+          Built in Mumbai, serving clients worldwide.
+        </p>
+
+        {/* CTAs */}
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
+          <a
+            href="https://wa.me/918828278210"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-cyan-600 hover:bg-cyan-500 text-white px-10 py-5 rounded-lg font-bold text-lg transition-colors w-full md:w-auto"
+          >
+            Get Your Business Automated
+          </a>
+
+          <a
+            href="/templates"
+            className="bg-transparent border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 px-10 py-5 rounded-lg font-bold text-lg transition-colors w-full md:w-auto"
+          >
+            Browse Automation Templates
+          </a>
+        </div>
+      </section>
+
+
+      {/* Services Teaser Section */}
+      <section className="py-16 px-6 bg-gray-900">
+        <div className="max-w-7xl mx-auto">
+
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+            What I Build
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            {/* Card 1 */}
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-cyan-500 transition-all flex flex-col min-h-[380px]">
+              <div className="flex justify-center mb-4">
+                <Bot size={40} className="text-cyan-400" />
+              </div>
+
+              <h3 className="text-xl md:text-2xl font-semibold text-cyan-400 mb-4 text-center">
+                Custom AI Agents
+              </h3>
+
+              <p className="text-gray-300 mb-4 text-center">
+                AI agents that qualify leads, schedule appointments,
+                and handle customer conversations automatically.
+              </p>
+
+              <ul className="text-sm text-gray-400 list-disc pl-5 space-y-2 mt-auto">
+                <li>WhatsApp and email triggers</li>
+                <li>Memory and vector database support</li>
+                <li>Integrations with calendars, sheets, and APIs</li>
+              </ul>
+            </div>
+
+
+            {/* Card 2 */}
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-cyan-500 transition-all flex flex-col min-h-[380px]">
+              <div className="flex justify-center mb-4">
+                <Workflow size={40} className="text-cyan-400" />
+              </div>
+
+              <h3 className="text-xl md:text-2xl font-semibold text-cyan-400 mb-4 text-center">
+                n8n Workflow Automation
+              </h3>
+
+              <p className="text-gray-300 mb-4 text-center">
+                Automate repetitive tasks like email sorting,
+                invoice processing, and CRM updates.
+              </p>
+
+              <ul className="text-sm text-gray-400 list-disc pl-5 space-y-2 mt-auto">
+                <li>Advanced error handling</li>
+                <li>Human fallback systems</li>
+                <li>Multi-app integrations</li>
+              </ul>
+            </div>
+
+
+            {/* Card 3 */}
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-cyan-500 transition-all flex flex-col min-h-[380px]">
+              <div className="flex justify-center mb-4">
+                <Mic size={40} className="text-cyan-400" />
+              </div>
+
+              <h3 className="text-xl md:text-2xl font-semibold text-cyan-400 mb-4 text-center">
+                Voice & Chat Bots
+              </h3>
+
+              <p className="text-gray-300 mb-4 text-center">
+                AI-powered voice callers and messaging bots
+                for customer support and order automation.
+              </p>
+
+              <ul className="text-sm text-gray-400 list-disc pl-5 space-y-2 mt-auto">
+                <li>Voice-to-text AI interactions</li>
+                <li>Order and menu handling</li>
+                <li>Calendar and notification systems</li>
+              </ul>
+            </div>
+
+
+            {/* Card 4 */}
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-cyan-500 transition-all flex flex-col min-h-[380px]">
+              <div className="flex justify-center mb-4">
+                <Settings size={40} className="text-cyan-400" />
+              </div>
+
+              <h3 className="text-xl md:text-2xl font-semibold text-cyan-400 mb-4 text-center">
+                Automation Maintenance
+              </h3>
+
+              <p className="text-gray-300 mb-4 text-center">
+                Ongoing monitoring, updates, and scaling
+                support for automation systems.
+              </p>
+
+              <ul className="text-sm text-gray-400 list-disc pl-5 space-y-2 mt-auto">
+                <li>24/7 workflow monitoring</li>
+                <li>Updates and improvements</li>
+                <li>Backup and security management</li>
+              </ul>
+            </div>
+
+          </div>
+
+
+          {/* CTA */}
+          <div className="text-center mt-12">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://wa.me/918828278210"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-cyan-600 hover:bg-cyan-500 text-white px-10 py-5 rounded-lg font-bold text-lg transition-colors inline-block w-full md:w-auto"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              Book a Free Automation Consultation
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+
+      <section className="py-16 px-6 bg-gray-900"> <div className="max-w-4xl mx-auto text-center"> {/* Heading */} <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-6 text-white"> Meet the Builder </h2> {/* Founder Photo */} <div className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg shadow-cyan-500/20"> <Image src="/maaz-founder.png" alt="Maaz Shaikh - Founder of HayaTech" fill className="object-cover" /> </div> {/* Founder Title */} <p className="text-cyan-400 font-medium mb-4"> Founder – HayaTech </p> {/* Intro */} <p className="text-lg md:text-xl text-gray-300 mb-6"> Hi, I'm Maaz, an AI Automation Architect based in Mumbai. </p> {/* Description */} <p className="text-gray-400 mb-8 max-w-2xl mx-auto"> I design AI automation systems that help freelancers and businesses eliminate repetitive work and scale operations using AI agents, automation workflows, and smart integrations. </p>
+
+        <a
+          href="https://wa.me/918828278210"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-cyan-600 hover:bg-cyan-500 text-white px-10 py-5 rounded-lg font-bold text-lg transition-colors inline-block w-full md:w-auto"
+        >
+          Let's Discuss Your Automation Needs
+        </a>
+
+      </div>
+      </section>
+
+
+      {/* Final CTA */}
+      <section className="py-20 px-6 bg-gradient-to-r from-cyan-900/30 to-emerald-900/30 text-center">
+
+        <div className="max-w-4xl mx-auto">
+
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            Ready to Automate Your Business?
+          </h2>
+
+          <p className="text-lg md:text-xl text-gray-300 mb-10">
+            Tell me about your business workflow and I will suggest the best
+            automation system for your needs. The consultation is free.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://wa.me/918828278210?text=Hi%20Maaz,%20I'd%20like%20to%20automate%20my%20business."
             target="_blank"
             rel="noopener noreferrer"
+            className="bg-green-600 hover:bg-green-500 text-white px-12 py-6 rounded-xl font-bold text-xl shadow-lg transition-all hover:scale-105 inline-block w-full md:w-auto"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            Start Free Consultation
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+          <p className="mt-6 text-gray-400 text-sm">
+            Or email: skmaaz8828@gmail.com
+          </p>
+
         </div>
-      </main>
-    </div>
+
+      </section>
+
+    </main>
   );
 }
+
