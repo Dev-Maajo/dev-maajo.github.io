@@ -165,7 +165,7 @@ export default function Home() {
       </section>
 
 
-      <section className="py-16 px-6 bg-gray-900"> <div className="max-w-4xl mx-auto text-center"> {/* Heading */} <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-6 text-white"> Meet the Builder </h2> {/* Founder Photo */} <div className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg shadow-cyan-500/20"> <Image src="/maaz-founder.png" alt="Maaz Shaikh - Founder of HayaTech" fill className="object-cover" /> </div> {/* Founder Title */} <p className="text-cyan-400 font-medium mb-4"> Founder – HayaTech </p> {/* Intro */} <p className="text-lg md:text-xl text-gray-300 mb-6"> Hi, I'm Maaz, an AI Automation Architect based in Mumbai. </p> {/* Description */} <p className="text-gray-400 mb-8 max-w-2xl mx-auto"> I design AI automation systems that help freelancers and businesses eliminate repetitive work and scale operations using AI agents, automation workflows, and smart integrations. </p>
+      <section className="py-16 px-6 bg-gray-900"> <div className="max-w-4xl mx-auto text-center"> {/* Heading */} <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-6 text-white"> Meet the Builder </h2> {/* Founder Photo */} <div className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg shadow-cyan-500/20"> <Image src="/maaz-founder.png" alt="Maaz Shaikh - Founder of HayaTech" fill className="object-cover" /> </div> {/* Founder Title */} <p className="text-cyan-400 font-medium mb-4"> Founder – HayaTech </p> {/* Intro */} <p className="text-lg md:text-xl text-gray-300 mb-6"> Hi, I&apos;m Maaz, an AI Automation Architect based in Mumbai. </p> {/* Description */} <p className="text-gray-400 mb-8 max-w-2xl mx-auto"> I design AI automation systems that help freelancers and businesses eliminate repetitive work and scale operations using AI agents, automation workflows, and smart integrations. </p>
 
         <a
           href="https://wa.me/918828278210"
@@ -173,7 +173,7 @@ export default function Home() {
           rel="noopener noreferrer"
           className="bg-cyan-600 hover:bg-cyan-500 text-white px-10 py-5 rounded-lg font-bold text-lg transition-colors inline-block w-full md:w-auto"
         >
-          Let's Discuss Your Automation Needs
+          Let&apos;s Discuss Your Automation Needs
         </a>
 
       </div>
@@ -214,4 +214,3 @@ export default function Home() {
     </main>
   );
 }
-

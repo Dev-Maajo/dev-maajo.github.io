@@ -14,6 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hayatech.dev"),
   title: "HayaTech – AI Automation Systems",
   description:
     "HayaTech builds AI automation systems including n8n workflows, AI agents, WhatsApp bots, and business automation solutions that help companies save time and scale operations.",

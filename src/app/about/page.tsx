@@ -44,11 +44,11 @@ export default function AboutPage() {
                     <div className="text-center md:text-left max-w-2xl">
 
                         <h2 className="text-3xl font-bold mb-6 text-cyan-400">
-                            Hi, I'm Maaz
+                            Hi, I&apos;m Maaz
                         </h2>
 
                         <p className="text-lg text-gray-300 mb-6">
-                            I'm an AI Automation Architect based in Mumbai. I design automation
+                            I&apos;m an AI Automation Architect based in Mumbai. I design automation
                             systems that help businesses eliminate repetitive work and operate
                             more efficiently using tools like AI agents, workflow automation,
                             and smart integrations.
@@ -145,4 +145,3 @@ export default function AboutPage() {
         </main>
     );
 }
-

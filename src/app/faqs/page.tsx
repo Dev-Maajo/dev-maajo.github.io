@@ -106,7 +106,7 @@ export default function FAQsPage() {
                 {/* Final CTA */}
                 <div className="text-center mt-16">
                     <p className="text-xl text-gray-400 mb-6">
-                        Still have questions? Let's discuss your automation needs.
+                        Still have questions? Let&apos;s discuss your automation needs.
                     </p>
 
                     <a

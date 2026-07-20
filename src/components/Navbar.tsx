@@ -10,6 +10,7 @@ const navItems = [
     { name: "Services", href: "/services" },
     { name: "Templates", href: "/templates" },
     { name: "Library", href: "/library" },
+    { name: "Projects", href: "/projects/hayatools" },
     { name: "About", href: "/about" },
     { name: "FAQs", href: "/faqs" },
 ];
@@ -97,4 +98,3 @@ export default function Navbar() {
         </nav>
     );
 }
-

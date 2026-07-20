@@ -3,11 +3,17 @@
 
 import { MessageCircle } from "lucide-react";
 
+declare global {
+    interface Window {
+        gtag?: (...args: unknown[]) => void;
+    }
+}
+
 export default function FloatingWhatsApp() {
 
     const handleClick = () => {
-        if (typeof window !== "undefined" && (window as any).gtag) {
-            (window as any).gtag("event", "whatsapp_click", {
+        if (typeof window !== "undefined" && window.gtag) {
+            window.gtag("event", "whatsapp_click", {
                 event_category: "contact",
                 event_label: "whatsapp_consultation",
                 value: 1,
