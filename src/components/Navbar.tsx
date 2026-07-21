@@ -11,6 +11,7 @@ const navItems = [
     { name: "Templates", href: "/templates" },
     { name: "Library", href: "/library" },
     { name: "Projects", href: "/projects/hayatools" },
+    { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
     { name: "FAQs", href: "/faqs" },
 ];

@@ -21,6 +21,14 @@ export default function sitemap() {
             lastModified: new Date(),
         },
         {
+            url: "https://hayatech.dev/blog",
+            lastModified: new Date("2026-07-21"),
+        },
+        {
+            url: "https://hayatech.dev/blog/how-browser-based-file-tools-protect-your-privacy",
+            lastModified: new Date("2026-07-21"),
+        },
+        {
             url: "https://hayatech.dev/privacy",
             lastModified: new Date(),
         },
