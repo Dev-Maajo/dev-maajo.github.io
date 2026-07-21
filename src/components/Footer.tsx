@@ -9,6 +9,7 @@ const navItems = [
     { name: "Projects", href: "/projects/hayatools" },
     { name: "About", href: "/about" },
     { name: "FAQs", href: "/faqs" },
+    { name: "Privacy Policy", href: "/privacy" },
 ];
 
 export default function Footer() {
@@ -93,12 +94,19 @@ export default function Footer() {
                     {/* Social / Legal */}
                     <div>
                         <h3 className="text-white font-medium mb-4">
-                            Social
+                            Legal & Social
                         </h3>
 
                         <p className="text-gray-400 text-sm">
                             LinkedIn and X profiles coming soon.
                         </p>
+
+                        <Link
+                            href="/privacy"
+                            className="mt-4 inline-block text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                        >
+                            Privacy Policy
+                        </Link>
 
                         <p className="mt-6 text-gray-500 text-xs">
                             © {new Date().getFullYear()} HayaTech. All rights reserved.

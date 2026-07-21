@@ -20,5 +20,9 @@ export default function sitemap() {
             url: "https://hayatech.dev/projects/hayatools",
             lastModified: new Date(),
         },
+        {
+            url: "https://hayatech.dev/privacy",
+            lastModified: new Date(),
+        },
     ];
 }

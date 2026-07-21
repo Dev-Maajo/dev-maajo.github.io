@@ -78,12 +78,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4891710027513778"
-        crossOrigin="anonymous"
-        strategy="beforeInteractive"
-      />
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4891710027513778"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
+      </head>
+
       <body
         className={`${inter.className} bg-gray-950 text-white min-h-screen flex flex-col`}
       >
@@ -92,6 +95,7 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-EW2BT26CPP"
           strategy="afterInteractive"
         />
+
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -101,16 +105,12 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Navbar */}
         <Navbar />
 
-        {/* Page Content */}
         <main className="pt-20 flex-grow">{children}</main>
 
-        {/* Footer */}
         <Footer />
 
-        {/* Floating WhatsApp Button */}
         <FloatingWhatsApp />
       </body>
     </html>
