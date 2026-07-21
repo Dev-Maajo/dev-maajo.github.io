@@ -54,6 +54,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4891710027513778"
+        crossOrigin="anonymous"
+        strategy="beforeInteractive"
+      />
       <body
         className={`${inter.className} bg-gray-950 text-white min-h-screen flex flex-col`}
       >
